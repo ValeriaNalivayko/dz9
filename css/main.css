@@ -1,0 +1,138 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    overflow: hidden;
+    counter-reset: hit;
+    position: relative;
+    background-image: url("../img/Фон.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    color: #fff;
+    cursor: url("../img/blaster1.png"),crosshair;
+}
+
+input:checked{
+    counter-increment: hit;
+}
+
+input:checked + label{
+    display: none;
+}
+
+.result{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.result::after{
+    content: counter(hit);
+}
+
+.nlo{
+    width: 90px;
+    height: 90px;
+    /* outline: 1px solid red; */
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: -90px;
+}
+
+.nlo label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/Нло.gif");
+    background-repeat: no-repeat;
+    /* background-size: 50%; */
+    cursor: url("../img/blaster1.png"),crosshair;
+}
+
+.nlo input{
+    position: absolute;
+    left: -200px;
+}
+
+.nlo1{
+    /* animation: fly1 10s 3; */
+    animation-name: fly1;
+    animation-duration: 9s;
+    /* animation-timing-function: ease-out; */
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+
+}
+
+.nlo2{
+    animation: fly2;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    /* animation-timing-function: cubic-bezier(1,-0.01,0,.68); */
+    animation-iteration-count: infinite;
+}
+
+.nlo3{
+    animation: fly1;
+    animation-delay: 5s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: cubic-bezier(.16,1.11,0,.68); */
+}
+
+.nlo4{
+    animation: fly2;
+    animation-delay: 5s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: cubic-bezier(0,.78,1,1.91); */
+}
+
+
+@keyframes fly1 {
+    0%{top: 90%;
+        left: 6%;}
+    35%{top: 55%;
+        left: 50%;}
+    57%{top: 75%;
+        left: 25%;
+        transform: rotate(240deg);}
+    83%{top: 10%;
+        left: 35%;
+        transform: rotate(180deg);}
+    100%{top: 25%;
+        left: 100%;}
+}
+
+@keyframes fly2 {
+    0%{top: 35%;
+        left: 100%;}
+    35%{top: 25%;
+        left: 40%;}
+    57%{top: 85%;
+        left: 80%;
+        transform: rotate(90deg);}
+    83%{top: 15%;
+        left: 60%;
+        transform: rotate(360deg);}
+    100%{top: 75%;
+        left: 20%;}
+    }
+    
